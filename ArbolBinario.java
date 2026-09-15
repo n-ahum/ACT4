@@ -11,7 +11,6 @@ package act4;
 public class ArbolBinario {
     private Node raiz;
 
-    // --- INSERTAR ---
     public void insertar(Empleado emp) {
         raiz = insertarRec(raiz, null, emp);
     }
@@ -30,7 +29,6 @@ public class ArbolBinario {
         return actual;
     }
 
-    // --- BUSCAR ---
     public Node buscar(int id) {
         return buscarRec(raiz, id);
     }
@@ -40,7 +38,6 @@ public class ArbolBinario {
         return id < actual.emp.id ? buscarRec(actual.izquierdo, id) : buscarRec(actual.derecho, id);
     }
 
-    // --- ELIMINAR ---
     public void eliminar(int id) {
         raiz = eliminarRec(raiz, id);
     }
@@ -74,7 +71,6 @@ public class ArbolBinario {
         return actual;
     }
 
-    // --- RECORRIDOS (Inorden, Preorden, Postorden) ---
     public void inorden()   { recorrer(raiz, "IN"); System.out.println(); }
     public void preorden()  { recorrer(raiz, "PRE"); System.out.println(); }
     public void postorden() { recorrer(raiz, "POST"); System.out.println(); }
